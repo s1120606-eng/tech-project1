@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Beauty & Fashion Links</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Poppins", "Noto Sans TC", sans-serif;
+      background: linear-gradient(135deg, #ffe6f0, #fceeff);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      position: relative;
+    }
+
+    /* 背景泡泡動畫 */
+    .bubble {
+      position: absolute;
+      bottom: -50px;
+      background: rgba(255, 182, 193, 0.3);
+      border-radius: 50%;
+      animation: rise 10s infinite ease-in;
+    }
+
+    @keyframes rise {
+      0% { transform: translateY(0) scale(1); opacity: 1; }
+      100% { transform: translateY(-110vh) scale(1.5); opacity: 0; }
+    }
+
+    .container {
+      background: rgba(255, 255, 255, 0.75);
+      backdrop-filter: blur(10px);
+      border-radius: 25px;
+      padding: 35px 45px;
+      max-width: 400px;
+      width: 90%;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(255, 150, 200, 0.2);
+      z-index: 2;
+      animation: fadeIn 1.2s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .avatar {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      margin-bottom: 20px;
+      border: 3px solid white;
+      box-shadow: 0 4px 15px rgba(255, 182, 193, 0.3);
+      object-fit: cover;
+    }
+
+    h1 {
+      font-size: 1.6em;
+      color: #333;
+      margin-bottom: 6px;
+    }
+
+    p {
+      font-size: 0.9em;
+      color: #777;
+      margin-bottom: 25px;
+    }
+
+    .links a {
+      display: block;
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 12px;
+      border-radius: 30px;
+      margin: 12px 0;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .links a:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 4px 15px rgba(255, 150, 200, 0.4);
+    }
+
+    footer {
+      margin-top: 25px;
+      font-size: 0.8em;
+      color: #aaa;
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        padding: 25px;
+      }
+      h1 {
+        font-size: 1.4em;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 浮動氣泡 -->
+  <script>
+    // 建立粉色泡泡背景
+    for (let i = 0; i < 15; i++) {
+      const bubble = document.createElement('div');
+      bubble.classList.add('bubble');
+      const size = Math.random() * 40 + 20; // 泡泡大小
+      bubble.style.width = size + 'px';
+      bubble.style.height = size + 'px';
+      bubble.style.left = Math.random() * 100 + '%';
+      bubble.style.animationDuration = 6 + Math.random() * 8 + 's';
+      bubble.style.animationDelay = Math.random() * 5 + 's';
+      document.body.appendChild(bubble);
+    }
+  </script>
+
+  <!-- 主內容 -->
+  <div class="container">
+    <img src="https://i.imgur.com/zYIlgBl.png" alt="avatar" class="avatar">
+    <h1>你的名字</h1>
+    <p>💄 高三學生 · 美妝與時尚愛好者</p>
+
+    <div class="links">
+      <a href="https://github.com/你的帳號" target="_blank">💻 GitHub</a>
+      <a href="mailto:你的email@example.com">📧 Email</a>
+      <a href="https://www.linkedin.com/in/你的帳號" target="_blank">💼 LinkedIn</a>
+      <a href="https://www.instagram.com/你的IG帳號" target="_blank">📸 Instagram</a>
+    </div>
+
+    <footer>© 2025 by 你的名字</footer>
+  </div>
+
+</body>
+</html>
